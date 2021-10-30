@@ -15,37 +15,7 @@ public class MainActivity extends AppCompatActivity {
         initFragment();
     }
 
-/*
-    private void click(View view) {
-        switch (view.getId()){
-            case R.id.f1:
-                Fragment1 fragment1 = new Fragment1();
-                FragmentTransaction ft1 = getSupportFragmentManager().beginTransaction();
-                ft1.replace(R.id.fragment_conteiner,fragment1);
-                break;
-            case R.id.f2:
-                Fragment2 fragment2 = new Fragment2();
-                FragmentTransaction ft2 = getSupportFragmentManager().beginTransaction();
-                ft2.replace(R.id.fragment_conteiner,fragment2);
-                break;
-            case  R.id.f3:
-                Fragment3 fragment3 = new Fragment3();
-                FragmentTransaction ft3 = getSupportFragmentManager().beginTransaction();
-                ft3.replace(R.id.fragment_conteiner,fragment3);
-                break;
-            case R.id.f4:
-                Fragment4 fragment4 = new Fragment4();
-                FragmentTransaction ft4 = getSupportFragmentManager().beginTransaction();
-                ft4.replace(R.id.fragment_conteiner,fragment4);
-                break;
-            case R.id.f5:
-                Fragment5 fragment5 = new Fragment5();
-                FragmentTransaction ft5 = getSupportFragmentManager().beginTransaction();
-                ft5.replace(R.id.fragment_conteiner,fragment5);
 
-        }
-    }
-*/
 
     private void initFragment() {
         getSupportFragmentManager().beginTransaction().add(R.id.fragment_conteiner,new Fragment1()).commit();
