@@ -5,16 +5,41 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment3">
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/fragment_3"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="16dp"
+        />
+
+    <TextView
+        android:id="@+id/textView_f3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button_next_f3"
         android:layout_marginTop="24dp"
         android:text="@string/fragment_3"
         android:textSize="15sp"
         android:textColor="@color/black"/>
+
+    <Button
+        android:id="@+id/button_next_f3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="64dp"
+        android:text="@string/next"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

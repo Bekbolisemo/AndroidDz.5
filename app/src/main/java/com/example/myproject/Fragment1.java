@@ -33,18 +33,19 @@ public class Fragment1 extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initView(view);
-        logic();
+        onClick();
 
     }
 
-    private void logic() {
+    private void onClick() {
      btn.setOnClickListener(v->{
-         Fragment5 fragment5 = new Fragment5();
+         Fragment2 fragment2 = new Fragment2();
+
          Bundle bundle = new Bundle();
          bundle.putString("key",email.getText().toString());
-         fragment5.setArguments(bundle);
+         fragment2.setArguments(bundle);
          FragmentTransaction ft = getParentFragmentManager().beginTransaction();
-         ft.replace(R.id.fragment_conteiner,fragment5);
+         ft.replace(R.id.fragment_conteiner,fragment2);
          ft.commit();
      });
 

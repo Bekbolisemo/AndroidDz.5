@@ -36,7 +36,7 @@ public class Fragment5 extends Fragment {
     private void logic() {
         Bundle args = this.getArguments();
         if (args != null){
-            String str = args.getString("key");
+            String str = args.getString("key4");
             email.setText(str);
         }
     }
