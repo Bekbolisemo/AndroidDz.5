@@ -14,35 +14,34 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+
+import com.example.myproject.databinding.Fragment1Binding;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class Fragment1 extends Fragment {
-
-    private TextInputEditText email;
-    private Button btn;
-    private FrameLayout frame;
+    Fragment1Binding binding;
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_1, container, false);
+        binding = Fragment1Binding.inflate(LayoutInflater.from(getContext()),container,false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
         onClick();
 
     }
 
     private void onClick() {
-     btn.setOnClickListener(v->{
+     binding.nextBtn.setOnClickListener(v->{
          Fragment2 fragment2 = new Fragment2();
 
          Bundle bundle = new Bundle();
-         bundle.putString("key",email.getText().toString());
+         bundle.putString("key",binding.emailEditText.getText().toString());
          fragment2.setArguments(bundle);
          FragmentTransaction ft = getParentFragmentManager().beginTransaction();
          ft.replace(R.id.fragment_conteiner,fragment2);
@@ -51,10 +50,5 @@ public class Fragment1 extends Fragment {
 
     }
 
-    private void initView(View view) {
-        frame = view.findViewById(R.id.fragment_conteiner);
-        btn = view.findViewById(R.id.next_btn);
-        email = view.findViewById(R.id.email_EditText);
 
-    }
 }

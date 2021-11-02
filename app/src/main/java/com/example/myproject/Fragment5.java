@@ -13,21 +13,22 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.myproject.databinding.Fragment5Binding;
+
 
 public class Fragment5 extends Fragment {
-    private TextView email;
-
+    private Fragment5Binding binding;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_5, container, false);
+        binding = Fragment5Binding.inflate(LayoutInflater.from(getContext()),container,false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
         logic();
 
     }
@@ -37,11 +38,7 @@ public class Fragment5 extends Fragment {
         Bundle args = this.getArguments();
         if (args != null){
             String str = args.getString("key4");
-            email.setText(str);
+            binding.email.setText(str);
         }
-    }
-
-    private void initView(View view) {
-        email = view.findViewById(R.id.email);
     }
 }

@@ -13,21 +13,22 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.myproject.databinding.Fragment3Binding;
+
 
 public class Fragment3 extends Fragment {
-    private TextView textView;
+    private Fragment3Binding binding;
     private  String receive;
-    private Button button;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_3, container, false);
+        binding = Fragment3Binding.inflate(LayoutInflater.from(getContext()),container,false);
+        return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initView(view);
         receive();
         onClick();
     }
@@ -36,12 +37,12 @@ public class Fragment3 extends Fragment {
         Bundle bundle = this.getArguments();
         if (bundle != null){
             receive = bundle.getString("key2");
-            textView.setText(receive);
+            binding.textViewF3.setText(receive);
         }
     }
 
     private void onClick() {
-        button.setOnClickListener(view -> {
+        binding.buttonNextF3.setOnClickListener(view -> {
             Bundle bundle = new Bundle();
             Fragment4 fragment4 = new Fragment4();
             bundle.putString("Key3",receive);
@@ -51,8 +52,5 @@ public class Fragment3 extends Fragment {
         });
     }
 
-    private void initView(View view) {
-        textView = view.findViewById(R.id.textView_f3);
-        button = view.findViewById(R.id.button_next_f3);
-    }
+
 }
